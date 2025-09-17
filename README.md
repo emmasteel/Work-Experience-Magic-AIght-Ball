@@ -2,8 +2,6 @@
 
 Hey Microsoft Work Experience gang! 👋 
 
-Welcome to your awesome coding adventure! You're about to build something really cool - an AI-powered Magic 8 Ball web app that can answer questions using artificial intelligence. How magical is that? 🪄
-
 ## 🚀 What Are We Building?
 
 We're creating a modern, AI-powered version of the classic Magic 8 Ball toy! Instead of just random responses, our Magic 8 Ball will use AI to give more thoughtful (and fun) answers to questions. Think of it as a wise digital fortune teller! 
@@ -34,36 +32,31 @@ A **repository** (or "repo" for short) is like a project folder that stores all 
 - **docs/** folder - Where we keep our planning documents
 - Soon: All the cool code for our Magic 8 Ball!
 
-### Step 3: How to Interact with This Repo
+### Install Visual Studio Code (VS Code)
 
-#### For Beginners (Web Interface):
-1. **Browse files**: Click on files and folders to explore
-2. **Read code**: Click on any file to see what's inside
-3. **See changes**: Click on "commits" to see the project history
-4. **Ask questions**: Use the "Issues" tab to ask questions or report problems
+1. Download VS Code
+   - Visit https://code.visualstudio.com and choose the Windows installer.
+   - Run the installer and follow the prompts. For convenience, enable options such as "Add to PATH" and "Open with Code" when available.
 
-#### For Advanced Users (Git Commands):
-If you want to work with the code locally on your computer:
+2. Install Git
+   - Download Git for Windows from https://git-scm.com/download/win and run the installer.
+   - During installation keep the default options or enable "Git Bash" and "Use Git from the Windows Command Prompt / Add to PATH" if you want to run Git commands from PowerShell or the integrated VS Code terminal.
+   - Verify the installation by running `git --version` in a terminal.
+   - Configure your identity so commits attribute correctly:
+     - `git config --global user.name "Your Name"`
+     - `git config --global user.email "you@example.com"`
 
-```bash
-# Clone this repository to your computer
-git clone https://github.com/emmasteel/Work-Experience-Magic-AIght-Ball.git
+3. Open the project in VS Code
+   - If you haven't cloned the repository yet, clone it directly from VS Code using Quick Open:
+     - Press Ctrl+P, type `>git clone`, then paste this URL: https://github.com/emmasteel/Work-Experience-Magic-AIght-Ball.git
+     - Follow the prompts to choose a local folder. VS Code will offer to open the cloned repository when finished.
+   - After cloning (or if you already have the folder), open the project folder in VS Code:
+     - Use File → Open Folder... in the VS Code UI and select the project folder.
 
-# Navigate into the project folder
-cd Work-Experience-Magic-AIght-Ball
+4. Install Node.js (if not already installed)
+   - This project uses JavaScript/TypeScript tools which require Node.js. Download the LTS version from https://nodejs.org and install it.
 
-# See what's changed
-git status
-
-# Add your changes
-git add .
-
-# Save your changes with a message
-git commit -m "Describe what you changed"
-
-# Share your changes
-git push
-```
+These steps should get you up and running quickly so you can start contributing to the Magic AIght Ball project.
 
 ## 📚 Project Documentation
 
@@ -80,6 +73,8 @@ By the end of this work experience, you'll have:
 - ✅ Understood how web applications work
 - ✅ Built something cool with AI
 - ✅ Worked as part of a development team
+- ✅ Worked with real engineers on the Software Development Lifecycle (SDLC)
+- ✅ Thought like a Business Analyst to extract requirements from users
 - ✅ Created something you can show friends and family!
 
 ## 🤝 Team Collaboration
