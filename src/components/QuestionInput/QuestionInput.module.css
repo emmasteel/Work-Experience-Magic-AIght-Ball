@@ -17,7 +17,7 @@
 }
 
 .inputLabel {
-  colour: #e0e6ed;
+  color: #e0e6ed;
   font-size: 1.1rem;
   font-weight: 500;
   text-align: center;
@@ -46,17 +46,19 @@
   border: 2px solid #4c5a67;
   border-radius: 15px;
   background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
-  colour: #e0e6ed;
+  color: #e0e6ed;
   font-size: 1rem;
   font-family: inherit;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 .questionInput::placeholder {
-  colour: #a0a9ba;
+  color: #a0a9ba;
   font-style: italic;
+  text-align: center;
 }
 
 .questionInput:focus {
@@ -84,7 +86,7 @@
   border: none;
   border-radius: 15px;
   background: linear-gradient(135deg, #9333ea 0%, #7c3aed 50%, #6d28d9 100%);
-  colour: white;
+  color: white;
   font-size: 1.1rem;
   font-weight: 600;
   font-family: inherit;
@@ -140,21 +142,21 @@
 
 .characterCount {
   font-size: 0.9rem;
-  colour: #a0a9ba;
-  text-align: right;
+  color: #a0a9ba;
+  text-align: center;
   margin-top: 0.25rem;
 }
 
 .characterCount.warning {
-  colour: #f59e0b;
+  color: #f59e0b;
 }
 
 .characterCount.error {
-  colour: #ef4444;
+  color: #ef4444;
 }
 
 .errorMessage {
-  colour: #ef4444;
+  color: #ef4444;
   font-size: 0.9rem;
   text-align: center;
   padding: 0.5rem;
@@ -207,13 +209,13 @@
   .questionInput {
     border-color: #ffffff;
     background: #000000;
-    colour: #ffffff;
+    color: #ffffff;
   }
   
   .submitButton {
     background: #000000;
     border: 2px solid #ffffff;
-    colour: #ffffff;
+    color: #ffffff;
   }
 }
 
