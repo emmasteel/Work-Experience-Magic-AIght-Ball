@@ -101,8 +101,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
-  padding: 1rem;
+  gap: 3rem;
+  padding: 2rem 1rem;
   max-width: 800px;
   margin: 0 auto;
   width: 100%;
@@ -164,10 +164,12 @@
 
 /* Footer styles */
 .app-footer {
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 3rem 1rem;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(147, 51, 234, 0.1);
   margin-top: auto;
+  background: rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .footer-text {
