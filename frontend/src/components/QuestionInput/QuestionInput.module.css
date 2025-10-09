@@ -74,6 +74,21 @@
   min-height: 1.5rem;
 }
 
+.hint .error {
+  colour: #ff6b6b;
+  font-weight: 600;
+}
+
+.errorMessage {
+  colour: #ff6b6b;
+  text-align: centre;
+  font-size: 0.875rem;
+  margin: 0.5rem 0 0;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 8px;
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
   .inputContainer {
