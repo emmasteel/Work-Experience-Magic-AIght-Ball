@@ -12,7 +12,7 @@ You're building a **Magic AIght Ball** - a modern, AI-powered version of the cla
 - **Framework**: React with TypeScript
 - **Styling**: Modular CSS (separate .module.css files for each component)
 - **Responsiveness**: Mobile-first design that works on phones, tablets, and desktops
-- **Theme**: Mystical, magical, but clean and modern
+- **Theme**: Purple, magical
 - **Accessibility**: Include ARIA labels, keyboard navigation, and screen reader support
 
 ### Backend Development  
