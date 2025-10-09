@@ -25,7 +25,7 @@ app.post('/api/ask-question', async (req: Request, res: Response) => {
   try {
     const { question } = req.body;
 
-    // Validate question
+    // Validate question exists
     if (!question || question.trim().length === 0) {
       return res.status(400).json({
         error: 'Please ask a question!',
@@ -33,10 +33,52 @@ app.post('/api/ask-question', async (req: Request, res: Response) => {
       });
     }
 
-    if (question.length > 500) {
+    // Sanitize input to prevent code injection
+    const sanitizedQuestion = question.trim();
+    
+    // Check for potentially malicious patterns (basic protection)
+    const dangerousPatterns = [
+      /<script/i,
+      /javascript:/i,
+      /on\w+\s*=/i, // onclick, onload, etc.
+      /<iframe/i,
+      /eval\s*\(/i,
+      /expression\s*\(/i
+    ];
+    
+    const hasDangerousContent = dangerousPatterns.some(pattern => 
+      pattern.test(sanitizedQuestion)
+    );
+    
+    if (hasDangerousContent) {
+      return res.status(400).json({
+        error: 'Invalid question format. Please ask a simple question.',
+        code: 'INVALID_INPUT'
+      });
+    }
+
+    // Validate character length
+    if (sanitizedQuestion.length > 500) {
       return res.status(400).json({
         error: 'Please keep questions under 500 characters',
         code: 'QUESTION_TOO_LONG'
+      });
+    }
+
+    // Count words excluding punctuation
+    const countWords = (text: string): number => {
+      if (!text.trim()) return 0;
+      const cleanedText = text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?'"]/g, '').trim();
+      return cleanedText.split(/\s+/).filter(word => word.length > 0).length;
+    };
+
+    const wordCount = countWords(sanitizedQuestion);
+    const maxWords = 30;
+
+    if (wordCount > maxWords) {
+      return res.status(400).json({
+        error: `Please keep questions to ${maxWords} words or less. Your question has ${wordCount} words.`,
+        code: 'TOO_MANY_WORDS'
       });
     }
 

@@ -13,12 +13,28 @@ const QuestionInput: React.FC<QuestionInputProps> = ({
   placeholder = "Ask the Magic 8 Ball a question..." 
 }) => {
   const [question, setQuestion] = useState('');
+  const [wordCountError, setWordCountError] = useState('');
+
+  // Count words excluding punctuation
+  const countWords = (text: string): number => {
+    if (!text.trim()) return 0;
+    // Remove punctuation and count words
+    const cleanedText = text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?'"]/g, '').trim();
+    return cleanedText.split(/\s+/).filter(word => word.length > 0).length;
+  };
+
+  const wordCount = countWords(question);
+  const maxWords = 30;
+  const isOverLimit = wordCount > maxWords;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (question.trim()) {
+    if (question.trim() && !isOverLimit) {
       onSubmit(question);
       setQuestion('');
+      setWordCountError('');
+    } else if (isOverLimit) {
+      setWordCountError(`Please keep your question to ${maxWords} words or less! ✨`);
     }
   };
 
@@ -29,7 +45,10 @@ const QuestionInput: React.FC<QuestionInputProps> = ({
           type="text"
           className={styles.input}
           value={question}
-          onChange={(e) => setQuestion(e.target.value)}
+          onChange={(e) => {
+            setQuestion(e.target.value);
+            setWordCountError('');
+          }}
           placeholder={placeholder}
           disabled={isDisabled}
           maxLength={500}
@@ -38,15 +57,22 @@ const QuestionInput: React.FC<QuestionInputProps> = ({
         <button 
           type="submit" 
           className={styles.button}
-          disabled={isDisabled || !question.trim()}
+          disabled={isDisabled || !question.trim() || isOverLimit}
           aria-label="Ask question"
         >
           Ask 🔮
         </button>
       </div>
       <p className={styles.hint}>
-        {question.length > 0 && `${question.length}/500 characters`}
+        {question.length > 0 && (
+          <span className={isOverLimit ? styles.error : ''}>
+            {wordCount}/{maxWords} words
+          </span>
+        )}
       </p>
+      {wordCountError && (
+        <p className={styles.errorMessage}>{wordCountError}</p>
+      )}
     </form>
   );
 };
