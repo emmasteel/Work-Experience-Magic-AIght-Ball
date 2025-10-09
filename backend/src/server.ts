@@ -68,7 +68,7 @@ app.post('/api/ask-question', async (req: Request, res: Response) => {
     // Count words excluding punctuation
     const countWords = (text: string): number => {
       if (!text.trim()) return 0;
-      const cleanedText = text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?'"]/g, '').trim();
+      const cleanedText = text.replace(/[.,/#!$%^&*;:{}=\-_`~()?'"]/g, '').trim();
       return cleanedText.split(/\s+/).filter(word => word.length > 0).length;
     };
 

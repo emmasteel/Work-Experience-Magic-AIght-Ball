@@ -19,7 +19,7 @@ const QuestionInput: React.FC<QuestionInputProps> = ({
   const countWords = (text: string): number => {
     if (!text.trim()) return 0;
     // Remove punctuation and count words
-    const cleanedText = text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?'"]/g, '').trim();
+    const cleanedText = text.replace(/[.,/#!$%^&*;:{}=\-_`~()?'"]/g, '').trim();
     return cleanedText.split(/\s+/).filter(word => word.length > 0).length;
   };
 
