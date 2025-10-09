@@ -77,6 +77,126 @@ By the end of this work experience, you'll have:
 - ✅ Thought like a Business Analyst to extract requirements from users
 - ✅ Created something you can show friends and family!
 
+## 🛠️ Development Setup
+
+### Prerequisites
+
+Before you start, make sure you have installed:
+- **Node.js** (version 18 or higher) - [Download here](https://nodejs.org/)
+- **Git** - For version control
+- **VS Code** - Your code editor
+
+### Quick Start
+
+1. **Clone the repository** (if you haven't already)
+   ```bash
+   git clone https://github.com/emmasteel/Work-Experience-Magic-AIght-Ball.git
+   cd Work-Experience-Magic-AIght-Ball
+   ```
+
+2. **Install all dependencies**
+   ```bash
+   # Install frontend dependencies
+   cd frontend
+   npm install
+   
+   # Install backend dependencies
+   cd ../backend
+   npm install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   # Copy the example environment file
+   cp .env.example .env
+   
+   # Edit .env and add your Azure OpenAI credentials
+   # (We'll configure Azure OpenAI later - the app works without it for now!)
+   ```
+
+4. **Run the development servers**
+
+   **Option 1: Run frontend and backend separately (recommended for learning)**
+   
+   In one terminal (backend):
+   ```bash
+   cd backend
+   npm run dev
+   ```
+   
+   In another terminal (frontend):
+   ```bash
+   cd frontend
+   npm run dev
+   ```
+
+   **Option 2: Run both together**
+   ```bash
+   # From the project root
+   npm run dev
+   ```
+
+5. **Open your browser**
+   - Frontend: http://localhost:5173
+   - Backend API: http://localhost:3001/api/health
+
+### Project Structure
+
+```
+Work-Experience-Magic-AIght-Ball/
+├── frontend/                 # React + TypeScript frontend
+│   ├── src/
+│   │   ├── components/      # React components (modular CSS)
+│   │   │   ├── MagicBall/
+│   │   │   │   ├── MagicBall.tsx
+│   │   │   │   ├── MagicBall.module.css
+│   │   │   │   └── index.ts
+│   │   │   └── QuestionInput/
+│   │   │       ├── QuestionInput.tsx
+│   │   │       ├── QuestionInput.module.css
+│   │   │       └── index.ts
+│   │   ├── services/        # API calls
+│   │   ├── hooks/           # Custom React hooks
+│   │   └── types/           # TypeScript type definitions
+│   └── package.json
+├── backend/                  # Node.js + Express backend
+│   ├── src/
+│   │   └── server.ts        # Main server file
+│   └── package.json
+├── docs/                     # Planning documents
+├── .env.example             # Example environment variables
+└── package.json             # Root package.json for convenience scripts
+```
+
+### Available Scripts
+
+**Frontend (in `frontend/` directory):**
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Check code quality
+
+**Backend (in `backend/` directory):**
+- `npm run dev` - Start development server with auto-reload
+- `npm run build` - Compile TypeScript to JavaScript
+- `npm start` - Run production build
+
+**Root directory:**
+- `npm run dev` - Run both frontend and backend
+- `npm run build` - Build both frontend and backend
+
+### Configuring Azure OpenAI (Optional)
+
+The app works with fallback responses without Azure OpenAI configured. When you're ready to add AI:
+
+1. Get Azure OpenAI credentials from Azure Portal
+2. Copy `.env.example` to `.env`
+3. Fill in your credentials:
+   ```
+   AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com/
+   AZURE_OPENAI_KEY=your-api-key-here
+   AZURE_OPENAI_DEPLOYMENT_NAME=your-deployment-name
+   ```
+
 ## 🤝 Team Collaboration
 
 Remember, coding is a team sport! Here are some tips:
